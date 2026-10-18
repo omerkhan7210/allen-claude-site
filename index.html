@@ -86,8 +86,8 @@
   --ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--ink);font:400 var(--step-body)/1.55 var(--text);-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{overflow-x:clip;background:var(--bg);color:var(--ink);font:400 var(--step-body)/1.55 var(--text);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration-thickness:.08em;text-underline-offset:.2em}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 ::selection{background:var(--accent);color:var(--accent-ink)}
@@ -110,7 +110,9 @@ img,svg{display:block}
 nav.bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:28px;padding-bottom:28px;flex-wrap:wrap}
 .wordmark{font-weight:500;text-decoration:none;font-size:var(--step-body)}
 .bar ul{display:flex;gap:28px;list-style:none;font-size:var(--step-small)}
-.bar a{text-decoration:none}
+.bar a{text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.link,.facts a,footer li a{display:inline-flex;align-items:center;min-height:44px}
+.panel .link{display:inline-flex}
 .bar a:hover{text-decoration:underline}
 
 .btn{display:inline-flex;align-items:center;min-height:48px;padding:0 28px;background:var(--accent);color:var(--accent-ink);font:500 var(--step-body)/1 var(--text);text-decoration:none;border:0;border-radius:0;cursor:pointer;transition:transform .25s var(--ease),background .25s}
@@ -184,13 +186,21 @@ footer ul{display:flex;gap:20px;list-style:none;flex-wrap:wrap}
 .js .rv.in{opacity:1;transform:none}
 
 @media (max-width:900px){
+  .stage{height:34svh}
+  .slip li i{display:none}
+  .slip li{justify-content:space-between;align-items:flex-start;gap:16px}
+  .slip li span{flex:none;text-align:right}
+  .slip li.end{display:block}
+  #top{padding-top:24px}
+  .lead{margin-top:24px}
+  .actions{margin-top:24px}
   .layout{display:block}
   .stage{position:sticky;top:0;height:44svh;z-index:2}
   .col{position:relative;z-index:1}
   .cap{display:none}
   .names{columns:2;font-size:var(--step-body)}
   #top{min-height:auto;padding-top:48px}
-  h1{font-size:clamp(4.5rem,24vw,9rem)}
+  h1{font-size:clamp(3.75rem,19vw,9rem)}
   section{padding-top:96px}
   .bar ul{gap:18px}
   .slip{max-width:none}
@@ -217,11 +227,11 @@ footer ul{display:flex;gap:20px;list-style:none;flex-wrap:wrap}
     </div>
 
     <div class="scene" id="s-tsawwassen" data-name="Photo: Amir Azar / Unsplash">
-      <img class="ph" src="https://images.unsplash.com/photo-1790625008113-f3f571daf137?auto=format&fit=crop&w=1600&h=2000&q=75" alt="Two people on a bench looking over the ocean at golden hour" width="1600" height="2000" loading="lazy">
+      <img class="ph" src="https://images.unsplash.com/photo-1790625008113-f3f571daf137?auto=format&fit=crop&w=1600&h=2000&q=75" alt="Two people on a bench looking over the ocean at golden hour" width="1600" height="2000">
     </div>
 
     <div class="scene" id="s-beachgrove" data-name="Photo: Pavol Svantner / Unsplash">
-      <img class="ph" src="https://images.unsplash.com/photo-1619165166843-524e0ef59971?auto=format&fit=crop&w=1600&h=2000&q=75" alt="Flag on the water at the shoreline" width="1600" height="2000" loading="lazy">
+      <img class="ph" src="https://images.unsplash.com/photo-1619165166843-524e0ef59971?auto=format&fit=crop&w=1600&h=2000&q=75" alt="Flag on the water at the shoreline" width="1600" height="2000">
     </div>
 
     <p class="cap" id="cap">Mount Baker over Boundary Bay and the Delta farmland</p>
