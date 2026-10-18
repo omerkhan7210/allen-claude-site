@@ -180,26 +180,26 @@ details p a{color:var(--ink)}
 footer{padding-top:max(30svh,160px);padding-bottom:28px;display:grid;gap:8px;font-size:var(--step-small)}
 footer .soft{color:var(--muted)}
 footer ul{display:flex;gap:20px;list-style:none;flex-wrap:wrap}
+footer p a{display:inline-flex;align-items:center;min-height:44px}
 
 .rv{opacity:1;transform:none}
 .js .rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--i,0) * 80ms)}
 .js .rv.in{opacity:1;transform:none}
 
 @media (max-width:900px){
-  .stage{height:34svh}
   .slip li i{display:none}
   .slip li{justify-content:space-between;align-items:flex-start;gap:16px}
   .slip li span{flex:none;text-align:right}
   .slip li.end{display:block}
-  #top{padding-top:24px}
+  nav.bar{padding-top:8px;padding-bottom:8px;gap:0 24px}
   .lead{margin-top:24px}
   .actions{margin-top:24px}
   .layout{display:block}
-  .stage{position:sticky;top:0;height:44svh;z-index:2}
+  .stage{position:sticky;top:0;height:30svh;z-index:2}
   .col{position:relative;z-index:1}
   .cap{display:none}
   .names{columns:2;font-size:var(--step-body)}
-  #top{min-height:auto;padding-top:48px}
+  #top{min-height:auto;padding-top:20px}
   h1{font-size:clamp(3.75rem,19vw,9rem)}
   section{padding-top:96px}
   .bar ul{gap:18px}
